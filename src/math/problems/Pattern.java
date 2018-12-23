@@ -1,5 +1,7 @@
 package math.problems;
 
+import java.sql.SQLOutput;
+
 public class Pattern {
 
 	public static void main(String[] args) {
@@ -8,8 +10,19 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
+		int count = 1, j = 0;
+		int num = 100;
+		int[] b1 = new int[40];
 
+		while (num > 0) {
+			for (int i = 0; i < 10; i++) {
+				System.out.print(" " + num);
+				b1[j] = num;
+				num -= count;
+				j++;
 
+			}
+			count++;
+		}
 	}
-}
+		}

@@ -3,6 +3,20 @@ package math.problems;
 import java.util.Arrays;
 
 public class FindLowestDifference {
+
+    public static int lowestDiff(int[] array1,int[] array2){
+        int min = Integer.MAX_VALUE;
+        for(int i=0; i< array1.length; i++){
+            for(int j =0;j<array2.length; j++){
+                int diff = Math.abs(array1[i] -array2[j]);
+                if(diff <min ) min= diff;
+
+            }
+        }
+        System.out.println("The lowest difference is " + min);
+        return min;
+    }
+
     public static void main(String[] args) {
         /*
          Implement in java.
@@ -14,20 +28,8 @@ public class FindLowestDifference {
 
 
         Arrays.sort(array1);
-        int minDiff = array1[1]-array1[0];
-        for (int i = 1 ; i != array1.length ; i++) {
-            minDiff = Math.min(minDiff, array1[i]-array1[i-1]);
-        }
-        System.out.println("The lowest difference is " + minDiff);
-
         Arrays.sort(array2);
-        int minDiffer = array2[1]-array2[0];
-        for (int i = 1 ; i != array2.length ; i++) {
-            minDiff = Math.min(minDiff, array2[i]-array2[i-1]);
-        }
-        System.out.println("The lowest difference is " + minDiff);
-
-
+        lowestDiff(array1,array2);
 
     }
 
