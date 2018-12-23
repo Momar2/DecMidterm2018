@@ -1,5 +1,7 @@
 package math.problems;
 
+import java.sql.SQLOutput;
+
 /**
  * Created by mrahman on 04/02/18.
  */
@@ -11,6 +13,13 @@ public class Factorial {
          * Write a java program to find Factorial of a given number using Recursion as well as Iteration.
          *
          */
+
+    int result =1;
+    int n = 4;
+        for (int i = 1; i <= n; i++) {
+            result = result * i;
+            System.out.println("The factorial of 4 is " + result);
+        }
 
     }
 }

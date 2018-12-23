@@ -45,14 +45,12 @@ public class Numbers {
 		//By following above, Continue for rest of the Sorting Algorithm....
 
 
-		//   Map<String, List<String>> num = new int[100];
-
 
 		//Come to conclusion about which Sorting Algo is better in given data set.
 
 	}
 
-	public static void storeRandomNumbers(int [] num){
+	public static void storeRandomNumbers(int... num){
 		Random rand = new Random();
 		for(int i=0; i<num.length; i++){
 			num[i] = rand.nextInt(1000000);
