@@ -1,9 +1,11 @@
 package algorithm;
 
 import databases.ConnectToSqlDB;
-
 import java.util.List;
 import java.util.Random;
+
+
+
 
 /*
  *Created by mrahman on 04/02/2018.
@@ -43,6 +45,7 @@ public class Numbers {
 		//By following above, Continue for rest of the Sorting Algorithm....
 
 
+		//   Map<String, List<String>> num = new int[100];
 
 
 		//Come to conclusion about which Sorting Algo is better in given data set.
@@ -72,5 +75,10 @@ public class Numbers {
 		for(String st:array){
 			System.out.println(st);
 		}
+
+
+
+
+
 	}
 }
