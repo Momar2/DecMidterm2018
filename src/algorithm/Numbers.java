@@ -23,18 +23,19 @@ public class Numbers {
 	 */
 
 	public static void main(String[] args) throws Exception {
-		
-		int [] num = new int[1000000];
+
+		int [] num = new int[10000];// it suppose to be 1M
 		storeRandomNumbers(num);
-		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+		//ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		//Selection Sort
 		Sort algo = new Sort();
 		algo.selectionSort(num);
 		long selectionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of "+ num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-        List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-        printValue(numbers);
+		//  connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
+		//  List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		//   printValue(numbers);
+
 		int n = num.length;
 		randomize (num, n);
 		//Insertion Sort
@@ -44,13 +45,31 @@ public class Numbers {
 
 		//By following above, Continue for rest of the Sorting Algorithm....
 
+		storeRandomNumbers(num);
+
+		randomize (num, n);
+		//Bubble sort
+		algo.bubbleSort(num);
+		long bubbleSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of "+ num.length + " numbers in bubble Sort take: " + bubbleSortExecutionTime + " milli sec");
+
+		//randomize(num,n);
+		// merge sort
+		algo.mergeSort(num);
+		long mergeSortExecutionTime = algo.executionTime;
+		System.out.println("Total Execution Time of "+ num.length + " numbers in merge Sort take: " + mergeSortExecutionTime + " milli sec");
+
+
+
+
+
 
 
 		//Come to conclusion about which Sorting Algo is better in given data set.
 
 	}
 
-	public static void storeRandomNumbers(int... num){
+	public static void storeRandomNumbers(int [] num){
 		Random rand = new Random();
 		for(int i=0; i<num.length; i++){
 			num[i] = rand.nextInt(1000000);
@@ -73,10 +92,5 @@ public class Numbers {
 		for(String st:array){
 			System.out.println(st);
 		}
-
-
-
-
-
 	}
 }

@@ -3,6 +3,7 @@ package datastructure;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CollectionView {
 
@@ -20,6 +21,13 @@ public static void main(String[] args) {
 
 
 
-    }
+        for(Map.Entry v : map.entrySet()) {
+                System.out.println(v.getKey() + " " + v.getValue());
+
+        }
+
+}
+
+
 
 }
