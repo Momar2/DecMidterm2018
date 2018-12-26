@@ -1,8 +1,9 @@
 package datastructure;
 
+import databases.ConnectToSqlDB;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class UseArrayList {
 
@@ -14,24 +15,42 @@ public class UseArrayList {
 		 *
 		 */
 
-		List<Integer> l = new ArrayList<Integer>();
-		l.add(222);
-		l.add(333);
-		l.add(444);
-		l.add(555);
-		l.add(666);
-		l.add(777);
+		ArrayList al = new ArrayList();
+		al.add("Paris");
+		al.add("Rio de Janeiro");
+		al.add("London");
+		al.add("Barcelona");
+		System.out.println("these are the cities");
 
-
-		for (Integer i : l) {
-			System.out.println("The value of this ArrayList is  " + " " + i);
+		for (int i = 0; i < al.size(); i++) {
+			System.out.println("cities :" + al.get(i));
 		}
-		System.out.println("This is showing While Loop ");
-		Iterator it = l.listIterator();
-		while (it.hasNext()) {
+		al.remove("Barcelona");
+		for (int i = 0; i < al.size(); i++) {
+			System.out.println("cities :" + al.get(i));
+		}
+
+		System.out.println(" ");
+		System.out.println("Printout the values using while loop with Iterator.....");
+		Iterator it = al.iterator();
+		while(it.hasNext()){
 			System.out.println(it.next());
-
-
 		}
+
+		al.remove(3);
+		al.remove("London");
+
+
+		System.out.println(" ");
+		System.out.println("Printout the values using For Each loop.....");
+
+
+//Database connection established
+		ConnectToSqlDB connect = new ConnectToSqlDB();
+
+		connect.insertDataFromArrayListToSqlTable(al,"ArrayList", "ArrayData");
+
+
+
 	}
 }

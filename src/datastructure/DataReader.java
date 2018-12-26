@@ -32,7 +32,7 @@ public class DataReader {
 		String store = "";
 
 		try{
-			fr = new FileReader("\\Users\\marwaomar\\eclipse-workspace\\DbConnection\\MidtermNovember2018\\src\\data");
+			fr = new FileReader("/Users/marwaomar/DecMidterm2018/src/data/self-driving-car");
 
 
 		}catch(Exception e){

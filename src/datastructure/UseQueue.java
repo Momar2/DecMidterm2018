@@ -1,5 +1,6 @@
 package datastructure;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -9,31 +10,40 @@ public class UseQueue {
 		/*
 		 * Demonstrate how to use Queue that includes add,peek,remove,pool elements.
 		 * Use For Each loop and while loop with Iterator to retrieve data.
-		*/
-
-		Queue<Integer> newQ = new LinkedList<Integer>();
-
-		newQ.add(78);
-		newQ.add(34);
-		newQ.add(98);
-		newQ.add(23);
-		newQ.add(79);
-
-
-		System.out.println(newQ.peek());
-		System.out.println(newQ.poll());
-		System.out.println(newQ.peek());
-		System.out.println(newQ.remove());
-		System.out.println(newQ.peek());
+		 *
+		 */
+		Queue<Integer> qn= new LinkedList<Integer>();
+		// Add elements to Queue.
+		qn.add(888);
+		qn.add(444);
+		qn.add(222);
+		qn.add(777);
+		qn.add(111);
+		System.out.println("integer queue");
 
 
 
-		System.out.println("Retrieved data through for each Loop: ");
-		for (Integer in : newQ) {
+		//Applied peek, poll, remove
+		System.out.println(qn.peek());
+		System.out.println(qn.poll());
+		System.out.println(qn.peek());
+		System.out.println(qn.remove());
+		System.out.println(qn.peek());
+
+		//Use of For Each loop  to retrieve data.
+
+		System.out.println("Use of for each loop to retrieve data: ");
+		for (Integer in : qn) {
 			System.out.println(in);
 		}
 
-
+		//Use of while loop with Iterator to retrieve data.
+		System.out.println("Use of while loop to retrieve data: ");
+		Iterator itr = qn.iterator();
+		while (itr.hasNext()) {
+			Integer i = (Integer) itr.next();
+			System.out.println(i);
+		}
 
 	}
 }
